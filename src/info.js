@@ -1,4 +1,5 @@
 import React from "react";
+import { PropTypes } from "prop-types";
 
 class Info extends React.Component {
   constructor(props) {
@@ -26,6 +27,10 @@ class Info extends React.Component {
 Info.defaultProps = {
   title: "default",
   number: 5,
+};
+
+Info.propTypes = {
+  title: PropTypes.string,
 };
 
 // Functional into class based component. React recommend functional components unless the project has a lot of state then use class components

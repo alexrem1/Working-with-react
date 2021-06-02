@@ -1,4 +1,5 @@
 import "./App.css";
+import { PropTypes } from "prop-types";
 import Info from "./Info";
 
 function App() {
@@ -28,6 +29,11 @@ function AddItem(props) {
 AddItem.defaultProps = {
   number: 2,
   text: "default",
+};
+
+AddItem.propTypes = {
+  number: PropTypes.number,
+  text: PropTypes.string,
 };
 
 // OR "decomposed" for small amount of props
