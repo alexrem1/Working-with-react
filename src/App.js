@@ -7,7 +7,7 @@ function App() {
       <Info />
       <AddItem text="Alex" number={2} />
       <AddItem text="Joe" />
-      <AddItem text="Test" />
+      <AddItem />
       <SomethingRandom text="John" />
     </div>
   );
@@ -25,9 +25,14 @@ function AddItem(props) {
   );
 }
 
-// OR
+AddItem.defaultProps = {
+  number: 2,
+  text: "default",
+};
 
-function SomethingRandom({ text, number }) {
+// OR "decomposed" for small amount of props
+
+function SomethingRandom({ text, number = 4 }) {
   // Decomposed props can be modified as they are a copy of the prop passed through
   text = "donkey";
 
