@@ -14,6 +14,7 @@ function App() {
 }
 
 function AddItem(props) {
+  // props are readonly eg property can't be changed from inside the component its being passed to eg props.text = "junk";
   return (
     <form>
       <label for="text-form">Type something: </label>
@@ -27,6 +28,9 @@ function AddItem(props) {
 // OR
 
 function SomethingRandom({ text, number }) {
+  // Decomposed props can be modified as they are a copy of the prop passed through
+  text = "donkey";
+
   return (
     <form>
       <label for="text-form">Type something: </label>
