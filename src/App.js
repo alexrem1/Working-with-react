@@ -4,7 +4,7 @@ import Info from "./Info";
 function App() {
   return (
     <div className="App">
-      <Info />
+      <Info title="Inventory" />
       <AddItem text="Alex" number={2} />
       <AddItem text="Joe" />
       <AddItem />
