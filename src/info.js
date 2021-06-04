@@ -4,23 +4,26 @@ import { PropTypes } from "prop-types";
 class Info extends React.Component {
   constructor(props) {
     super(props);
-    console.log(props);
+    this.state = {
+      count: 0,
+      title: "Hello",
+    };
+    // this.buttonPressed = this.buttonPressed.bind(this);
+  }
+
+  buttonPressed() {
+    this.setState({
+      count: this.state.count + 1,
+    });
   }
 
   render() {
-    const showTitle = true;
-
-    if (showTitle) {
-      return (
-        <div>
-          <p>{this.props.number}</p>
-          <h1>{showTitle ? this.props.title : "No title"}</h1>
-          <p>Manage your stuff</p>
-        </div>
-      );
-    } else {
-      return <p>Empty..</p>;
-    }
+    return (
+      <div>
+        <p>Count: {this.state.count} </p>
+        <button onClick={() => this.buttonPressed()}>Click Me!</button>
+      </div>
+    );
   }
 }
 
