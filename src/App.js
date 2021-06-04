@@ -1,54 +1,39 @@
 import "./App.css";
 import { PropTypes } from "prop-types";
 import Info from "./Info";
+import { useState } from "react";
 
 function App() {
   return (
     <div className="App">
       <Info title="Inventory" />
-      <AddItem text="Alex" number={2} />
-      <AddItem text="Joe" />
-      <AddItem />
-      <SomethingRandom text="John" />
+      <ButtonState />
     </div>
   );
 }
 
-function AddItem(props) {
-  // props are readonly eg property can't be changed from inside the component its being passed to eg props.text = "junk";
-  return (
-    <form>
-      <label for="text-form">Type something: </label>
-      <input type="text" id="text-form" value={props.text} />
-      {/* <Info /> */}
-      <p>{props.number}</p>
-    </form>
-  );
-}
+function ButtonState() {
+  const [title, setTitle] = useState("");
+  const [count, setCount] = useState(0);
 
-AddItem.defaultProps = {
-  number: 2,
-  text: "default",
-};
-
-AddItem.propTypes = {
-  number: PropTypes.number,
-  text: PropTypes.string,
-};
-
-// OR "decomposed" for small amount of props
-
-function SomethingRandom({ text, number = 4 }) {
-  // Decomposed props can be modified as they are a copy of the prop passed through
-  text = "donkey";
+  const updateTitleClicked = () => {
+    setTitle("We now have a title!");
+  };
+  const updateCounterClicked = () => {
+    if (count === 0) {
+      setCount(count + 1);
+    } else {
+      setCount(count - 1);
+    }
+  };
 
   return (
-    <form>
-      <label for="text-form">Type something: </label>
-      <input type="text" id="text-form" value={text} />
-      {/* <Info /> */}
-      <p>{number}</p>
-    </form>
+    <div>
+      <p>Title: {title}</p>
+      <p>Counter: {count}</p>
+      <button onClick={updateTitleClicked}>Update Title</button>
+      <button onClick={updateCounterClicked}>Update Count</button>
+    </div>
   );
 }
 
