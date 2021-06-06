@@ -10,14 +10,34 @@ function SearchBar(props) {
     <div>
       <h2>Search for an Item</h2>
       <form>
-        <label for="name-field">Name: </label>
-        <input id="name-field" type="text" value={name}></input>
-        <label for="price-field">Max Price: </label>
-        <input id="price-field" type="number" value={price}></input>
-        <label for="type-field">Type: </label>
-        <input id="type-field" type="text" value={type}></input>
-        <label for="brand-field">Brand: </label>
-        <input id="brand-field" type="text" value={brand}></input>
+        <label htmlFor="name-field">Name: </label>
+        <input
+          id="name-field"
+          type="text"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        ></input>
+        <label htmlFor="price-field">Max Price: </label>
+        <input
+          id="price-field"
+          type="number"
+          value={price}
+          onChange={(e) => setPrice(e.target.value)}
+        ></input>
+        <label htmlFor="type-field">Type: </label>
+        <input
+          id="type-field"
+          type="text"
+          value={type}
+          onChange={(e) => setType(e.target.value)}
+        ></input>
+        <label htmlFor="brand-field">Brand: </label>
+        <input
+          id="brand-field"
+          type="text"
+          value={brand}
+          onChange={(e) => setBrand(e.target.value)}
+        ></input>
         <button type="button">Search</button>
       </form>
     </div>
