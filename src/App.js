@@ -3,6 +3,7 @@ import { useState } from "react";
 import AddItem from "./AddItem";
 import ItemsDisplay from "./ItemsDisplay";
 import styled from "styled-components";
+import style from "./App.module.css";
 
 const Title = styled.h1`
   color: ${(props) => (props.color ? props.color : "black")};
@@ -27,6 +28,9 @@ function App() {
 
   return (
     <div className="App">
+      <p className={style.blue}>
+        Tessting modular css eg specific to component
+      </p>
       <Title color="red" style={{ backgroundColor: "violet" }}>
         test
       </Title>
