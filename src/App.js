@@ -21,6 +21,9 @@ function App() {
   const addItemToData = (item) => {
     let items = data["items"];
     item.id = items.length;
+
+    fetch("http://localhost:3000/items");
+
     items.push(item);
     setData({ items: items });
     console.log(data);
