@@ -21,8 +21,10 @@ function App() {
   const addItemToData = (item) => {
     let items = data["items"];
     item.id = items.length;
-
-    fetch("http://localhost:3000/items");
+    const requestOptions = {
+      method: "POST",
+    };
+    fetch("http://localhost:3000/items", requestOptions);
 
     items.push(item);
     setData({ items: items });
