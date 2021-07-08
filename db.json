@@ -1,3 +1,18 @@
 {
-  "items": []
+  "items": [
+    {
+      "name": "john wick",
+      "price": "233",
+      "type": "person",
+      "brand": "great",
+      "id": 1
+    },
+    {
+      "name": "john wick",
+      "price": "68",
+      "type": "hey",
+      "brand": "get",
+      "id": 2
+    }
+  ]
 }
